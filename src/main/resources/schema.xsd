@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.weather.com/soapservice/xjc"
+           targetNamespace="http://www.weather.com/soapservice/xjc" elementFormDefault="qualified">
+
+    <xs:element name="WeatherRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="zip" type="xs:int"/>
+                <xs:element name="date" type="xs:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="WeatherResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Weather" type="tns:Weather"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Weather">
+        <xs:sequence>
+            <xs:element name="min" type="xs:string"/>
+            <xs:element name="max" type="xs:string"/>
+            <xs:element name="zip" type="xs:int"/>
+            <xs:element name="date" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
